@@ -11,7 +11,7 @@ def main():
     # Backtrader prints a flat line for the first 200 days so I added this logic to compensate
     df["pandas"] = p.iloc[:, 1] * 100000
     df["pandas"] = df["pandas"].pct_change()[200:]
-    df["pandas"] = (1+df["pandas"]).cumprod() + 100000
+    df["pandas"] = (1+df["pandas"]).cumprod() * 100000
 
     df["backtrader"] = bt.iloc[200:, 1]
 
